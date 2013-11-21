@@ -19,7 +19,7 @@ before_filter :load_parent
 
   
   def create
-    @post = @user.posts.new(params[:post].permit(:content, :user_id))
+    @post = @user.posts.new(params[:post].permit(:content, :user_id)
 
     respond_to do |format|
       if @post.save
