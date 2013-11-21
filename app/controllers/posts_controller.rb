@@ -16,7 +16,6 @@ before_filter :load_parent
   def edit
     @post = @user.posts.find(params[:id])
   end
-
   
   def create
     @post = @user.posts.new(params[:post].permit(:content, :user_id))
@@ -47,6 +46,7 @@ before_filter :load_parent
   end
 
   def destroy
+    @post = @user.posts.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to user_posts_path(@user) }
@@ -59,14 +59,7 @@ before_filter :load_parent
     def load_parent
       @user = User.find(params[:user_id])
     end
-
-  #private
-    # Use callbacks to share common setup or constraints between actions.
-  #  def set_post
-  #   @post = @user.posts.find(params[:id])
-  #  end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+ 
     def post_params
       params.require(:post).permit(:content, :user_id)
     end
