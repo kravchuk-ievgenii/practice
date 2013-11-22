@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-before_filter :load_parent
+  before_filter :load_parent
   
   def index
     @posts = @user.posts.all
