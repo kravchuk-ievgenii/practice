@@ -1,5 +1,13 @@
 class PostsController < ApplicationController
   before_filter :load_parent
+
+  def perverts
+     @posts = @user.posts.all
+  end
+
+  def love
+    @post = @user.posts.find(params[:id])
+  end
   
   def index
     @posts = @user.posts.all

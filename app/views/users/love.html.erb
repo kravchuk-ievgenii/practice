@@ -1,0 +1,7 @@
+
+<%  if @user.name == "abdul" %>
+  <%= image_tag("sheep.jpg") %>
+  <%else%>
+  <%= image_tag("girl.jpg") %>
+<%end%>
+<%= link_to 'Back', users_path %> 

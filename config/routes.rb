@@ -1,5 +1,15 @@
 Practice::Application.routes.draw do
- resources :users do
-   resources :posts
- end
+
+  root 'users#index'
+
+  resources :users do
+    get 'perverts', on: :collection
+  	get 'love', on: :member
+
+    resources :posts do
+      get 'perverts', on: :collection
+    end  
+
+  end
+  
 end
