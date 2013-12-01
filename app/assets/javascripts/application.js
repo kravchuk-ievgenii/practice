@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+@import "empty.js.coffee";
+@import "empty_lib.js.coffee";
+@import "empty_ven.js.coffee";

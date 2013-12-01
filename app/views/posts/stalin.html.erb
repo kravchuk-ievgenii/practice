@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1>Content:</h1>
+ <h2> <%= @post.content %><h2>
+</p>
+
+<p>
+  <h1>User:</h1>
+  <h2><%= @post.user_id %></h2>
+</p>
+
+
+<%= link_to 'Back', user_posts_path(@user) %>

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
      @posts = @user.posts.all
   end
 
-  def love
+  def stalin
     @post = @user.posts.find(params[:id])
   end
   

@@ -8,8 +8,7 @@ Practice::Application.routes.draw do
 
     resources :posts do
       get 'perverts', on: :collection
-    end  
-
+      get 'stalin', on: :member
+    end
   end
-  
 end
