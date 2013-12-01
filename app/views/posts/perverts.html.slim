@@ -1,0 +1,16 @@
+h1 Doubtful posts
+table
+  thead
+    tr
+      th Posts
+      th | User
+      th
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        - if post.content == "sheep"
+          td= post.content
+          td= post.user_id
+br
+  = link_to 'Back', user_posts_path

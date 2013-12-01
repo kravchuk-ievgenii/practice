@@ -1,0 +1,28 @@
+h1 List of posts
+table
+  thead
+    tr
+      th Content
+      th User
+      th
+      th
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        td= post.content
+        td= post.user_id
+        td
+          = link_to 'Show', user_post_path(@user, post)
+        td= link_to 'Edit', edit_user_post_path(@user, post)
+        td= link_to 'Destroy',[@user, post], method: :delete, data:   {confirm: 'Are you sure?'}
+br
+  = link_to 'New Post', new_user_post_path(@user)
+  | |
+  = link_to 'Doubtful Posts', perverts_user_posts_path(@user)
+  | |
+  = link_to 'Back to users', users_path(@user)
+  h4
+    | Amount of posts #{quantity_posts}
+  h5
+    | Current time #{time_now}

@@ -1,0 +1,10 @@
+p#notice= notice
+p
+  h1 Content:
+  h2
+    = @post.content
+    h2
+p
+  h1 User:
+  h2= @post.user_id
+= link_to 'Back', user_posts_path(@user)

@@ -1,8 +1,7 @@
 $color: #144;
 
 @mixin padding-margin {
-  margin: 0;
-  
+  margin: 0;  
 }
 
 
@@ -21,7 +20,11 @@ h1 {
     font: 150% sans-serif;
     color: $color;
     @include padding-margin;
-      }
+}
+
+ p {
+  font: 14px verdana;
+}
 
 h2 {
   font-size: 135%;
