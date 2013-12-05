@@ -3,7 +3,7 @@ table
   thead
     tr
       th Content
-      th User
+      th User ID
       th
       th
       th
@@ -13,16 +13,19 @@ table
         td= post.content
         td= post.user_id
         td
-          = link_to 'Show', user_post_path(@user, post)
-        td= link_to 'Edit', edit_user_post_path(@user, post)
-        td= link_to 'Destroy',[@user, post], method: :delete, data:   {confirm: 'Are you sure?'}
+           button.btn.btn-info type="button" = link_to 'Show', user_post_path(@user, post)
+        td
+          button.btn.btn-warning type="button" = link_to 'Edit', edit_user_post_path(@user, post)
+        td
+          button.btn.btn-danger type="button"= link_to 'Destroy',[@user, post], method: :delete, data:   {confirm: 'Are you sure?'}
+h5
+    | Total:#{quantity_posts}
 br
-  = link_to 'New Post', new_user_post_path(@user)
-  | |
-  = link_to 'Doubtful Posts', perverts_user_posts_path(@user)
-  | |
-  = link_to 'Back to users', users_path(@user)
-  h4
-    | Amount of posts #{quantity_posts}
+  button.btn.btn-primary type="button" = link_to 'New Post', new_user_post_path(@user)
+  | &nbsp
+  button.btn.btn-default type="button" = link_to 'Doubtful Posts', perverts_user_posts_path(@user)
+  | &nbsp
+  button.btn.btn-succes type="button" = link_to 'Back to users', users_path(@user)
+  
   h5
     | Current time #{time_now}

@@ -2,8 +2,36 @@ doctype
 html
   head
     title Practice
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   body
-    = yield
+    .navbar.navbar-inverse.navbar-fixed-top role="navigation"
+      .container
+        .navbar-header
+          a.navbar-brand href="/" Forum
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a href="/" Home
+            li
+              a href="#about" About
+            li
+              a href="#contact" Contact
+        /! /.nav-collapse
+    br
+      br
+        br
+          br
+            .container
+              .starter-template
+                p.lead= yield
+            /! /.container
+            footer
+              | &copy; SS 2013
+            /!
+              | Bootstrap core JavaScript
+              | \==================================================
+            /! Placed at the end of the document so the pages load faster
+            script src="https://code.jquery.com/jquery-1.10.2.min.js"
+            script src="../../dist/js/bootstrap.min.js"

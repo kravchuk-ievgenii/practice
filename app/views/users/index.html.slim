@@ -1,23 +1,30 @@
-h1 Listing users
+h1 List of users
 table
   thead
     tr
-      th Name
-      th
-      th
-      th
+      td
+        h3
+          |Name
+      td
+      td
+      td
   tbody
     - @users.each do |user|
       tr
-        td = user.name
-        td = link_to 'Show', user
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, method: :delete, data:   {confirm: 'Are you sure?'} 
+        td 
+          strong= user.name
+        td 
+          button.btn.btn-info type="button" = link_to 'Show', user 
+        td
+          button.btn.btn-warning type="button" = link_to 'Edit', edit_user_path(user)
+        td 
+          button.btn.btn-danger type="button" = link_to 'Destroy', user, method: :delete, data:   {confirm: 'Are you sure?'}
+h5
+    | Total:#{quantity_users} 
 br
-  = link_to 'New User', new_user_path
-  | | 
-  = link_to 'Show perverts', perverts_users_path
-  h4
-    | Amount of users #{quantity_users}
+  button.btn.btn-primary type="button" = link_to 'New User', new_user_path
+  | &nbsp
+  button.btn.btn-default type="button" = link_to 'Show perverts', perverts_users_path
+  
   h5
     | Current time #{time_now}

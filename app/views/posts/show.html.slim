@@ -1,12 +1,12 @@
+button.btn.btn-default type="button" = link_to 'Had you seen Stalin?', stalin_user_post_path(@user, @post)
 p#notice= notice
-h2
-  = link_to 'Had you seen Stalin?', stalin_user_post_path(@user, @post)
+  
 p
   strong Content:
   = @post.content
 p
   strong User:
   = @post.user_id
-= link_to 'Edit', edit_user_post_path(@user, @post)
-| |
-= link_to 'Back', user_posts_path(@user)
+button.btn.btn-warning type="button" = link_to 'Edit', edit_user_post_path(@user, @post)
+| &nbsp
+button.btn.btn-succes type="button"= link_to 'Back', user_posts_path(@user)

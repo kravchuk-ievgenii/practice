@@ -2,10 +2,10 @@ p#notice= notice
 p
   strong Name:
   = @user.name
-= link_to 'Edit', edit_user_path(@user)
-| |
-= link_to 'Back', users_path
-| |
-= link_to 'Posts', user_posts_path(@user)
-| |
-= link_to 'Prefers', love_user_path
+button.btn.btn-warning type="button" = link_to 'Edit', edit_user_path(@user)
+| &nbsp
+button.btn.btn-succes type="button" = link_to 'Back', users_path
+| &nbsp
+button.btn.btn-primary type="button" = link_to 'Posts', user_posts_path(@user)
+| &nbsp
+button.btn.btn-default type="button" = link_to 'Prefers', love_user_path
