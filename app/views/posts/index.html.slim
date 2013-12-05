@@ -1,31 +1,33 @@
 h1 List of posts
-table
-  thead
-    tr
-      th Content
-      th User ID
-      th
-      th
-      th
-  tbody
-    - @posts.each do |post|
+.well
+  table
+    thead
       tr
-        td= post.content
-        td= post.user_id
+        td 
+          h2 Content &nbsp
+        
         td
-           button.btn.btn-info type="button" = link_to 'Show', user_post_path(@user, post)
         td
-          button.btn.btn-warning type="button" = link_to 'Edit', edit_user_post_path(@user, post)
         td
-          button.btn.btn-danger type="button"= link_to 'Destroy',[@user, post], method: :delete, data:   {confirm: 'Are you sure?'}
-h5
-    | Total:#{quantity_posts}
-br
-  button.btn.btn-primary type="button" = link_to 'New Post', new_user_post_path(@user)
-  | &nbsp
-  button.btn.btn-default type="button" = link_to 'Doubtful Posts', perverts_user_posts_path(@user)
-  | &nbsp
-  button.btn.btn-succes type="button" = link_to 'Back to users', users_path(@user)
-  
+    tbody
+      - @posts.each do |post|
+        tr
+          td 
+            h3 = post.content
+          
+          td
+             button.btn.btn-info type="button" = link_to 'Show', user_post_path(@user, post)
+          td
+            button.btn.btn-warning type="button" = link_to 'Edit', edit_user_post_path(@user, post)
+          td
+            button.btn.btn-danger type="button"= link_to 'Destroy',[@user, post], method: :delete, data:   {confirm: 'Are you sure?'}
   h5
-    | Current time #{time_now}
+      | Total:#{quantity_posts_posts}
+  br
+    button.btn.btn-primary type="button" = link_to 'New Post', new_user_post_path(@user)
+    | &nbsp
+    button.btn.btn-default type="button" = link_to 'Doubtful Posts', perverts_user_posts_path(@user)
+    | &nbsp
+    button.btn.btn-succes type="button" = link_to 'Back to users', users_path(@user)
+    
+ 

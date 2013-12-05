@@ -1,5 +1,6 @@
 h1 Editing user
-= render 'form'
-button.btn.btn-info type="button" = link_to 'Show', @user 
-| &nbsp
-button.btn.btn-succes type="button" = link_to 'Back', users_path
+.well
+  = render 'form'
+  button.btn.btn-info type="button" = link_to 'Show', @user 
+  | &nbsp
+  button.btn.btn-succes type="button" = link_to 'Back', users_path

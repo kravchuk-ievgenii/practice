@@ -1,16 +1,17 @@
 h1 Doubtful posts
-table
-  thead
-    tr
-      th Posts
-      th | User
-      th
-      th
-  tbody
-    - @posts.each do |post|
+.well
+  table
+    thead
       tr
-        - if post.content == "sheep"
-          td= post.content
-          td= post.user_id
+        td 
+        h2 Posts
+        
+    tbody
+      - @posts.each do |post|
+        tr
+          - if post.content == "sheep"
+            td
+            h3 = post.content
+          
 br
   button.btn.btn-succes type="button" = link_to 'Back', user_posts_path

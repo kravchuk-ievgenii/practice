@@ -12,8 +12,12 @@ html
           a.navbar-brand href="/" Forum
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
+            li
               a href="/" Home
+            li
+              = link_to 'New User', new_user_path
+          .rr
+            #{time_now} 
     br
       br
         br
@@ -22,11 +26,11 @@ html
               .starter-template
                 p.lead= yield
             /! /.container
-            footer
-              | &copy; SS 2013
-            /!
-              | Bootstrap core JavaScript
-              | \==================================================
-            /! Placed at the end of the document so the pages load faster
-            script src="https://code.jquery.com/jquery-1.10.2.min.js"
-            script src="../../dist/js/bootstrap.min.js"
+            
+
+    .footer
+      | Contact us: example@gmail.ua
+              
+
+
+           

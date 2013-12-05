@@ -1,30 +1,37 @@
 h1 List of users
-table
-  thead
-    tr
-      td
-        h3
-          |Name
-      td
-      td
-      td
-  tbody
-    - @users.each do |user|
+.well
+  table
+    thead
       tr
-        td 
-          strong= user.name
-        td 
-          button.btn.btn-info type="button" = link_to 'Show', user 
         td
-          button.btn.btn-warning type="button" = link_to 'Edit', edit_user_path(user)
-        td 
-          button.btn.btn-danger type="button" = link_to 'Destroy', user, method: :delete, data:   {confirm: 'Are you sure?'}
-h5
-    | Total:#{quantity_users} 
-br
-  button.btn.btn-primary type="button" = link_to 'New User', new_user_path
-  | &nbsp
-  button.btn.btn-default type="button" = link_to 'Show perverts', perverts_users_path
-  
+          h2
+            |Name
+        td
+          
+        td
+        td
+    tbody
+      - @users.each do |user|
+        tr
+          td 
+            h2 = user.name
+          td 
+            span.badge = quantity_posts(user)
+            | &nbsp
+            | &nbsp
+            | &nbsp
+            | &nbsp
+          td 
+            button.btn.btn-info type="button" = link_to 'Show', user 
+          td
+            button.btn.btn-warning type="button" = link_to 'Edit', edit_user_path(user)
+          td 
+            button.btn.btn-danger type="button" = link_to 'Destroy', user, method: :delete, data:   {confirm: 'Are you sure?'}
   h5
-    | Current time #{time_now}
+      | Total:#{quantity_users} 
+  br
+    button.btn.btn-primary type="button" = link_to 'New User', new_user_path
+    | &nbsp
+    button.btn.btn-default type="button" = link_to 'Show perverts', perverts_users_path
+    
+  

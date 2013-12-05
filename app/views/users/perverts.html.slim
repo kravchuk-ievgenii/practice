@@ -1,15 +1,18 @@
-h3 List of perverts
-table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
-  tbody
-    - @users.each do |user|
+h2 List of perverts
+.well
+  table
+    thead
       tr
-        - if user.name == "abdul"
-          td= user.name
-br
-  button.btn.btn-succes type="button" = link_to 'Back', users_path
+        td 
+          h3 Name
+        td
+        td
+        td
+    tbody
+      - @users.each do |user|
+        tr
+          - if user.name == "abdul"
+            td
+              h4 = user.name
+  br
+    button.btn.btn-succes type="button" = link_to 'Back', users_path

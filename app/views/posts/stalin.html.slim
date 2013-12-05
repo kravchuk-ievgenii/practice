@@ -1,10 +1,11 @@
 p#notice= notice
-p
-  h1 Content:
-  h2
-    = @post.content
+.well
+  p
+    h1 Content:
     h2
-p
-  h1 User:
-  h2= @post.user_id
-button.btn.btn-succes type="button" = link_to 'Back', user_posts_path(@user)
+      = @post.content
+      h2
+  p
+    h1 User:
+    h2= @post.user_id
+  button.btn.btn-succes type="button" = link_to 'Back', user_posts_path(@user)
