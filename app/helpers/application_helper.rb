@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def time_now
-   Time.new
+   Time.now.strftime("%d/%m/%Y %H:%M")
   end
 
   def quantity_users
