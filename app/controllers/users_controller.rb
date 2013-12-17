@@ -12,7 +12,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
   def show
+    User.sir(User.big(@user.name))
+
   end
 
   def new

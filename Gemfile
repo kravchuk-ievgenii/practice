@@ -29,6 +29,16 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'slim'
 
+gem 'rspec-rails'
+
+gem 'database_cleaner'
+
+gem 'factory_girl_rails'
+
+group :test do
+  gem 'capybara', '1.1.2'
+end
+
 
 gem 'bootstrap-sass', '~> 3.0.2.0'
 
