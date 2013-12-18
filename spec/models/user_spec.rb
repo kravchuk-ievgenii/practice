@@ -4,9 +4,6 @@ describe User do
 
   let(:user) { FactoryGirl.create(:user) }
 
-  describe "class methods" do
-    before(:each) { user.save }
-
     describe "#Capitalize_name" do
       it "should be capitalized" do
         expect(User.big(user.name)).to be_eql user.name.capitalize
@@ -18,8 +15,10 @@ describe User do
         expect(User.sir(user.name)).to include("Sir")
       end
     end
-  end
+  
 end
+
+
 
 
 

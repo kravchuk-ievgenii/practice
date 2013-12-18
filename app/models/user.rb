@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
+   validates :name, presence: true
+   validates_length_of :name, :minimum =>2
 
   class << self
 

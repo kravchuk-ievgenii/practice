@@ -29,14 +29,21 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'slim'
 
-gem 'rspec-rails'
 
-gem 'database_cleaner'
 
-gem 'factory_girl_rails'
+group :development, :test do
+  gem 'capybara'
 
-group :test do
-  gem 'capybara', '1.1.2'
+  gem 'rspec-rails'
+
+  gem 'database_cleaner'
+
+  gem 'factory_girl_rails'
+  
+  gem 'poltergeist'
+
+  gem 'phantomjs'
+
 end
 
 

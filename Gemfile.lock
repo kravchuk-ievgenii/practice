@@ -49,14 +49,18 @@ GEM
     database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     ffi (1.9.3)
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -74,6 +78,13 @@ GEM
     multi_json (1.8.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    phantomjs (1.9.2.1)
+    poltergeist (1.0.3)
+      capybara (~> 1.1)
+      childprocess (~> 0.3)
+      faye-websocket (~> 0.4.4)
+      http_parser.rb (~> 0.5.3)
+      multi_json (~> 1.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -155,12 +166,14 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.0.2.0)
-  capybara (= 1.1.2)
+  capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
   jbuilder (~> 1.2)
   jquery-rails
+  phantomjs
+  poltergeist
   rails (= 4.0.0)
   rspec-rails
   sass-rails (~> 4.0.0)
