@@ -1,6 +1,36 @@
 require 'spec_helper'
 
-describe "test js"do
+describe "test js", :js=> true do
+
+  it "square should move" do
+    visit users_path
+
+    
+    before_keypress = page.evaluate_script("before_keypress = $('.one').css('left')")
+
+    keypress_script = "var e = $.Event('keypress', { keyCode: 68 }); $('body').trigger(e);"
+    page.driver.execute_script(keypress_script)
+
+
+    puts before_keypress
+    
+   # page.evaluate_script(" $('document').trigger($.Event('keypress(68)'))" )
+
+    after_keypress = page.evaluate_script("after_keypress = $('.one').css('left')")
+
+    puts after_keypress
+
+   
+    expect(before_keypress).not_to be_eql after_keypress
+
+
+
+  end
+
+  it "should not have text" do
+    visit users_path
+    expect(page).not_to have_content 'It works'
+  end
 
   it "should add text", :js=> true  do
     visit users_path
@@ -32,5 +62,5 @@ describe "create new user"do
         expect { click_button submit }.not_to change(User, :count)
       end
     end
-    
+
 end
