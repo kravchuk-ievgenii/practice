@@ -1,5 +1,15 @@
 require 'spec_helper'
 
+describe "test js"do
+
+  it "should add text", :js=> true  do
+    visit users_path
+    click_button 'run_test'
+    expect(page).to have_content 'It works'
+  end
+
+end
+
 describe "create new user"do
 
   before {visit new_user_path}
@@ -22,4 +32,5 @@ describe "create new user"do
         expect { click_button submit }.not_to change(User, :count)
       end
     end
+    
 end
